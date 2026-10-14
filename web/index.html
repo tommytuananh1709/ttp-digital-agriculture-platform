@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TTP Crop Analysis Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>TTP Crop Analysis — Demo UI</h1>
+
+    <form id="analyzeForm">
+      <div class="row">
+        <label>Farmer ID</label>
+        <input type="text" id="farmer_id" value="22222222-2222-2222-2222-222222222222" />
+      </div>
+      <div class="row">
+        <label>Field ID</label>
+        <input type="text" id="field_id" value="33333333-3333-3333-3333-333333333333" />
+      </div>
+      <div class="row">
+        <label>Season ID</label>
+        <input type="text" id="season_id" value="44444444-4444-4444-4444-444444444444" />
+      </div>
+      <div class="row">
+        <label>Crop</label>
+        <input type="text" id="crop" value="sầu riêng" />
+      </div>
+
+      <div class="row">
+        <label>Image URL (or upload)</label>
+        <input type="text" id="image_url" placeholder="https://.../img.jpg or leave empty to upload" />
+        <input type="file" id="image_file" accept="image/*" />
+      </div>
+
+      <div class="row">
+        <label>User note</label>
+        <input type="text" id="user_note" placeholder="Lá vàng nhiều..." />
+      </div>
+
+      <div class="actions">
+        <button type="submit">Analyze</button>
+        <button type="button" id="fillDemo">Fill demo data</button>
+      </div>
+    </form>
+
+    <div id="spinner" class="hidden">Đang phân tích... ⏳</div>
+
+    <div id="result" class="result hidden">
+      <h2>Kết quả</h2>
+      <div id="card" class="card"></div>
+      <pre id="raw" class="raw"></pre>
+    </div>
+
+    <footer>
+      <small>Demo UI — kết nối tới backend: <code>/api/v1/crop-analysis/analyze</code></small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
